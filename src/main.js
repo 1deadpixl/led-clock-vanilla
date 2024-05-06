@@ -26,13 +26,14 @@ const parts = {
 
 let location
 
-async function getLocation() {
-  await navigator.geolocation.getCurrentPosition(setLocation, (error) => console.log(error))
+function getLocation() {
+  console.log("Getting location...")
+  navigator.geolocation.getCurrentPosition(setLocation, (error) => console.log(error))
 }
 
 function setLocation(pos) {
-  location = [pos.latitude, pos.longitude]
-  console.log(location)
+  location = [pos.coords.latitude, pos.coords.longitude]
+  console.log("Got a new location:", location)
   updateSunTimes()
 }
 
@@ -107,7 +108,7 @@ const cronJobs = [
     cronTime: getCronTimeForEvery12HoursFromNow(),
     onTick: getLocation,
     start: true,
-    runOnInit: true
+    runOnInit: false
   })
 ]
 
