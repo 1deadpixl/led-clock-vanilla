@@ -32,7 +32,10 @@ function getLocation() {
 }
 
 function setLocation(pos) {
-  location = [pos.coords.latitude, pos.coords.longitude]
+  location = {
+    lat: pos.coords.latitude,
+    lng: pos.coords.longitude
+  }
   console.log("Got a new location:", location)
   updateSunTimes()
 }
