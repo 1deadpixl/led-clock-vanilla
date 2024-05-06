@@ -111,7 +111,7 @@ const cronJobs = [
     cronTime: getCronTimeForEvery12HoursFromNow(),
     onTick: getLocation,
     start: true,
-    runOnInit: false
+    runOnInit: true
   })
 ]
 
