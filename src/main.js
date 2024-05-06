@@ -147,7 +147,7 @@ function tick() {
 }
 
 document.body.addEventListener('click', () => {
-  getCurrentLocation()
+  getLocation()
 })
 
 tick()
