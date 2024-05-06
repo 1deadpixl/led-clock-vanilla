@@ -1,0 +1,76 @@
+<!-- 
+  TODO:
+    - Click on timezone to change it with dropdown
+    - Show weather?
+    - Sun timeline (block graphics, dim and bright blocks with line crossing them)
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+
+  <body>
+    <!-- <div class="flex flex-nowrap content-center justify-center h-screen text-emerald-700 bg-slate-900"> -->
+    <div class="grid grid-cols-5 grid-rows-5 h-screen text-emerald-700 bg-slate-900">
+      <div class="col-start-2 col-end-5 row-start-2 row-end-5 text-center">
+        <!-- <header>
+          <h1 class="text-4xl">Welcome</h1>
+        </header> -->
+        <div class="flex flex-col justify-center">
+          <div class="font-led7 relative h-[500px]">
+            <div class="opacity-20 text-green-900 absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
+              <div class="text-5xl mb-6 flex content-between">
+                <span class="font-led14 inline-block">~~~</span>
+                <span class="flex-1 text-right">8888-88-88</span>
+              </div>
+              <div class="flex">
+                <span class="text-9xl">88:88</span>
+                <div class="float-right text-left flex flex-col justify-between ml-4">
+                  <div class="text-5xl font-led14">~~~</div>
+                  <div class="text-5xl align-bottom">88</div>
+                </div>
+              </div>
+              <div class="mt-8" style="text-shadow: none;">
+                <!-- <span>██████████████████</span> -->
+                &nbsp;
+              </div>
+            </div>
+            <div class="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]"
+              style="text-shadow: rgb(135 255 195 / 40%) 0px 0px 8px;">
+              <div class="text-5xl mb-6 flex">
+                <span id="day" class="font-led14">~~~</span>
+                <span id="date" class="flex-1 text-right">8888-88-88</span>
+              </div>
+              <div class="flex">
+                <span class="text-9xl"><span id="hour">88</span><span id="indicator">:</span><span
+                    id="minute">88</span></span>
+                <div class="float-right text-left flex flex-col justify-between ml-4">
+                  <div class="text-5xl font-led14"><span id="timezone">~~~</span></div>
+                  <div class="text-5xl align-bottom"><span id="second">88</span></div>
+                </div>
+              </div>
+              <div class="mt-8 relative h-4 bg-emerald-900/20" style="text-shadow: none;">
+                <div id="first-light-indicator" class="absolute h-full bg-emerald-900"></div>
+                <div id="dawn-indicator" class="absolute h-full bg-emerald-800"></div>
+                <div id="daytime-indicator" class="absolute h-full bg-emerald-700"></div>
+                <div id="dusk-indicator" class="absolute h-full bg-emerald-800"></div>
+                <div id="last-light-indicator" class="absolute h-full bg-emerald-900"></div>
+                <div id="progress" class="absolute -translate-x-[50%] -bottom-4 -mb-1 hidden drop-shadow-glow">▲
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./src/main.js"></script>
+
+  </body>
+
+</html>
