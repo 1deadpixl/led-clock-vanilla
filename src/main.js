@@ -13,21 +13,10 @@ const parts = {
   progress: document.getElementById("progress")
 }
 
-/* const cronJobs = {
-  hourly: {
-    jobs: [
-      async function () {
-        // get sunrise and sunset times from some API
-      }
-    ],
-    lastRun: undefined
-  }
-} */
-
 let location
 
 function getLocation() {
-  console.log("Getting location...")
+  console.info("Getting location...")
   navigator.geolocation.getCurrentPosition(setLocation, (error) => console.log(error))
 }
 
@@ -36,7 +25,7 @@ function setLocation(pos) {
     lat: pos.coords.latitude,
     lng: pos.coords.longitude
   }
-  console.log("Got a new location:", location)
+  console.info("Got the location.", location)
   updateSunTimes()
 }
 
@@ -118,21 +107,6 @@ const cronJobs = [
 function tick() {
   const now = DateTime.now()
 
-  // run cron jobs at the top of the hour
-  // if minute == 0 and cron job hasn't run in the last 3600 seconds :
-  // run cron job, store last run time
-
-
-  // if (!cronJobs.hourly.lastRun) {
-
-  // } else if (now.minute == 0 && now.toUnixInteger() - cronJobs.hourly.lastRun > 3600) {
-
-  // }
-
-  // run cron job on first run
-  // if last run time is undefined :
-  // run cron job
-
   parts.day.textContent = now.toFormat('ccc').toUpperCase()
   parts.date.textContent = now.toFormat('yyyy-LL-dd')
   parts.timezone.textContent = now.toFormat('ZZZZ')
@@ -149,9 +123,5 @@ function tick() {
 
   setTimeout(tick, 1000 - now.millisecond)
 }
-
-document.body.addEventListener('click', () => {
-  getLocation()
-})
 
 tick()
